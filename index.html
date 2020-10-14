@@ -20,13 +20,13 @@
         <div class="userInputs">
             <div class="user1">
                 <div class="userName">User 1</div>
-            <span class="cashSpan">$&nbsp;<input type="number" id="user1Bids" onkeydown="if (event.keyCode == 13) { user1Bids(); return false;}"></span>
-                <button onclick="user1Bids()">Place Bid</button>
+            <span class="cashSpan">$&nbsp;<input type="number" id="user1Bids" onkeydown="user1Bids(event)"></span>
+                <button onclick="user1Bids(event)">Place Bid</button>
             </div>
             <div class="user2">
                 <div class="userName">User 2</div>
-            <span class="cashSpan">$&nbsp;<input type="number" id="user2Bids" onkeydown="if (event.keyCode == 13) { user2Bids(); return false;}"></span>
-                <button onclick="user2Bids()">Place Bid</button>
+            <span class="cashSpan">$&nbsp;<input type="number" id="user2Bids" onkeydown="user2Bids(event)"></span>
+                <button onclick="user2Bids(event)">Place Bid</button>
             </div>
         </div>
     </div>

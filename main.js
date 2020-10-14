@@ -2,20 +2,21 @@
 let all1Bids = [];
 let all2Bids = [];
 let totalBids = [];
-let highestTotalBid = totalBids[0] || null;
+let highestTotalBid = totalBids[0] || [];
 
 // Functions
+function findHighest(totalBids) {
+    let number = null;
+    for (let i = 0; i < totalBids.length; i++) {
+        number = totalBids[i];
+        highestTotalBid = Math.max(highestTotalBid, number);
+        }
+    return highestTotalBid;
+}
+
 function addTotalBids() {
     let mathMaxBids = Math.max(...all1Bids, ...all2Bids);
     totalBids.push(mathMaxBids);
-    function findHighest(totalBids) {
-        let number = null;
-        for (let i = 0; i < totalBids.length; i++) {
-            number = totalBids[i];
-            highestTotalBid = Math.max(highestTotalBid, number);
-            }
-            return highestTotalBid;
-        }
     findHighest(totalBids);
     document.getElementById('totalBid').innerHTML = '$ ' + highestTotalBid;
     localStorageSave();
@@ -27,23 +28,24 @@ function localStorageSave() {
 
 function localStorageGet() {
     let dataGet = JSON.parse(localStorage.getItem("highestTotalBid"));
-    highestTotalBid = dataGet;
-    addTotalBids();
+    highestTotalBid.push(dataGet);
+    document.getElementById('totalBid').innerHTML = '$ ' + highestTotalBid;
 };
 
-function user1Bids() {
+function user1Bids(event) {
+    if (event.type === "keydown" && event.keyCode !== 13) return;
     let bid1Amount = document.getElementById("user1Bids").value;
     all1Bids.push(bid1Amount);
     document.getElementById("user1Bids").value = '';
     addTotalBids();
 };
 
-function user2Bids() {
+function user2Bids(event) {
+    if (event.type === "keydown" && event.keyCode !== 13) return;
     let bid2Amount = document.getElementById("user2Bids").value;
     all2Bids.push(bid2Amount);
     document.getElementById("user2Bids").value = '';
     addTotalBids();
 };
 
-window.onload = localStorageGet();
-// window.onload = localStorage.clear();
+localStorageGet();
