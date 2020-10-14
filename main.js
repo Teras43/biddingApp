@@ -29,7 +29,6 @@ function localStorageGet() {
     let dataGet = JSON.parse(localStorage.getItem("highestTotalBid"));
     highestTotalBid = dataGet;
     addTotalBids();
-    console.log("Grab successful!")
 };
 
 function user1Bids() {
