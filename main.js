@@ -19,30 +19,32 @@ function addTotalBids() {
     findHighest(totalBids);
     document.getElementById('totalBid').innerHTML = '$ ' + highestTotalBid;
     localStorageSave();
-}
+};
+
 function localStorageSave() {
     localStorage.setItem("highestTotalBid", JSON.stringify(highestTotalBid));
-}
+};
 
 function localStorageGet() {
     let dataGet = JSON.parse(localStorage.getItem("highestTotalBid"));
-    highestTotalBid.push(dataGet);
+    highestTotalBid = dataGet;
+    addTotalBids();
     console.log("Grab successful!")
-}
+};
 
 function user1Bids() {
     let bid1Amount = document.getElementById("user1Bids").value;
     all1Bids.push(bid1Amount);
     document.getElementById("user1Bids").value = '';
     addTotalBids();
-}
+};
 
 function user2Bids() {
     let bid2Amount = document.getElementById("user2Bids").value;
     all2Bids.push(bid2Amount);
     document.getElementById("user2Bids").value = '';
     addTotalBids();
-}
+};
 
-window.onload = localStorageGet;
+window.onload = localStorageGet();
 // window.onload = localStorage.clear();
