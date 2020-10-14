@@ -2,12 +2,12 @@
 let all1Bids = [];
 let all2Bids = [];
 let totalBids = [];
+let highestTotalBid = totalBids[0] || null;
 
 // Functions
 function addTotalBids() {
     let mathMaxBids = Math.max(...all1Bids, ...all2Bids);
     totalBids.push(mathMaxBids);
-    let highestTotalBid = totalBids[0] || null;
     function findHighest(totalBids) {
         let number = null;
         for (let i = 0; i < totalBids.length; i++) {
@@ -21,12 +21,12 @@ function addTotalBids() {
     localStorageSave();
 }
 function localStorageSave() {
-    localStorage.setItem("totalBids", JSON.stringify(totalBids));
+    localStorage.setItem("highestTotalBid", JSON.stringify(highestTotalBid));
 }
 
 function localStorageGet() {
-    let dataGet = JSON.parse(localStorage.getItem("totalBids"));
-    totalBids.push(dataGet);
+    let dataGet = JSON.parse(localStorage.getItem("highestTotalBid"));
+    highestTotalBid.push(dataGet);
     console.log("Grab successful!")
 }
 
@@ -44,4 +44,5 @@ function user2Bids() {
     addTotalBids();
 }
 
-// window.onload = localStorageGet;
+window.onload = localStorageGet;
+// window.onload = localStorage.clear();

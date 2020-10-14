@@ -6,21 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bidding App</title>
     <link rel="stylesheet" href="./styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@500&display=swap" rel="stylesheet">
     <script defer src="./main.js"></script>
 </head>
 
 <body>
     <div class="pageContainer">
+        <div class="simpleBidding">Simple Bidding!</div>
+        <div class="highestBid">Highest Bid!</div>
         <div id="totalBid">
-
         </div>
+        <div class="placeYourBets">Place Your Bets!</div>
         <div class="userInputs">
             <div class="user1">
-                <span>$&nbsp;<input type="number" id="user1Bids"></span>
+                <div class="userName">User 1</div>
+                <span class="cashSpan">$&nbsp;<input type="number" id="user1Bids"></span>
                 <button onclick="user1Bids()">Place Bid</button>
             </div>
             <div class="user2">
-                <span>$&nbsp;<input type="number" id="user2Bids"></span>
+                <div class="userName">User 2</div>
+                <span class="cashSpan">$&nbsp;<input type="number" id="user2Bids"></span>
                 <button onclick="user2Bids()">Place Bid</button>
             </div>
         </div>

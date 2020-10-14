@@ -1,3 +1,87 @@
+body {
+  background-color: #004E64;
+}
 
+.simpleBidding {
+  display: flex;
+  justify-content: center;
+  font-size: 100px;
+  color: #B3001B;
+  margin-top: 80px;
+  margin-bottom: 170px;
+  text-decoration: underline;
+  font-family: "Sansita Swashed", cursive;
+}
+
+.pageContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.highestBid {
+  font-size: 40px;
+  color: #B3001B;
+  font-family: "Sansita Swashed", cursive;
+}
+
+#totalBid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 250px;
+  border: 1px solid black;
+  background-color: #5AB1BB;
+  margin-bottom: 50px;
+  font-size: 40px;
+  color: #34252F;
+  font-family: "Sansita Swashed", cursive;
+}
+
+.cashSpan {
+  color: #34252F;
+  margin-left: 50px;
+  font-size: 20px;
+  font-family: "Sansita Swashed", cursive;
+}
+
+.userInputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  padding: 50px;
+  background-color: #5AB1BB;
+  margin-bottom: 200px;
+}
+.userInputs input {
+  font-family: "Sansita Swashed", cursive;
+  font-size: 18px;
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+  text-align: center;
+}
+.userInputs button {
+  font-family: "Sansita Swashed", cursive;
+  font-size: 18px;
+}
+
+.placeYourBets {
+  font-size: 40px;
+  color: #B3001B;
+  font-family: "Sansita Swashed", cursive;
+}
+
+.userName {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 15px;
+  color: #34252F;
+  font-size: 20px;
+  font-family: "Sansita Swashed", cursive;
+}
 
 /*# sourceMappingURL=styles.css.map */
